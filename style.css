@@ -1,0 +1,94 @@
+body{
+margin:0;
+font-family:Arial;
+background:#f2f2f2;
+}
+
+.topbar{
+display:flex;
+align-items:center;
+justify-content:space-between;
+background:#ff6a00;
+padding:12px 25px;
+color:white;
+}
+
+.logo{
+font-weight:bold;
+font-size:22px;
+}
+
+.menu span{
+margin:0 10px;
+cursor:pointer;
+}
+
+.search input{
+padding:8px;
+width:250px;
+border-radius:20px;
+border:none;
+}
+
+.account span{
+margin-right:10px;
+}
+
+.categories{
+display:flex;
+gap:10px;
+padding:15px;
+background:#eee;
+overflow-x:auto;
+}
+
+.cat{
+background:#ddd;
+padding:8px 15px;
+border-radius:20px;
+font-size:14px;
+}
+
+.active{
+background:white;
+border:2px solid black;
+}
+
+.products{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
+padding:20px;
+}
+
+.card{
+background:white;
+border-radius:10px;
+padding:10px;
+box-shadow:0 2px 8px rgba(0,0,0,0.1);
+}
+
+.card img{
+width:100%;
+border-radius:8px;
+}
+
+.title{
+font-size:14px;
+margin:5px 0;
+}
+
+.price{
+color:#ff6a00;
+font-weight:bold;
+}
+
+.btn{
+    border: none;
+    border-radius: 8px;
+    margin-left: 8px;
+}
+.account a{
+    text-decoration: none;
+    color: white;
+}

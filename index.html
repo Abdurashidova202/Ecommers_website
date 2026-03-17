@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Temu</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="topbar">
+<div class="logo">TEMU</div>
+
+<div class="menu">
+<span>Best Sellers</span>
+<span>5-Star Rated</span>
+<span>New Arrivals</span>
+<span>Categories</span>
+</div>
+
+<div class="search">
+<input placeholder="Search..." id="searchInput">
+</div>
+
+<div class="account">
+<span>Sign in</span>
+<span>Support</span>
+<a href="cart.html">Cart</a>
+🛒
+</div>
+</header>
+
+
+<section class="categories">
+
+<div class="cat active">Recommended</div>
+<div class="cat">Beachwear</div>
+<div class="cat">Kids</div>
+<div class="cat">Men's Shoes</div>
+<div class="cat">Smart Home</div>
+<div class="cat">Appliances</div>
+<div class="cat">Electronics</div>
+
+</section>
+
+
+<section class="products">
+
+<div class="card">
+<img src="backpack.jpg">
+<p class="title">Large Capacity Backpack</p>
+<p class="price">$11.15 
+<button class="btn" data-name="Large Capacity Backpack"
+ data-price="$11.15"
+ data-img="backpack">🛒</button>
+</p>
+
+</div>
+
+<div class="card">
+<img src="shampoo.jpg">
+<p class="title">Pet Shampoo Brush</p>
+<p class="price">$1.56 
+<button class="btn" data-name="Pet Shampoo Brush"
+ data-price="$1.56"
+ data-img="shampoo.jpg">🛒</button>
+</p>
+
+</div>
+
+<div class="card">
+<img src="shop.avif">
+<p class="title">Clothes Storage Bag</p>
+<p class="price">$10.83 
+<button class="btn" data-name="Clothes Storage Bag"
+ data-price="$10.83"
+ data-img="shop.avif">🛒</button>
+</p>
+
+</div>
+
+<div class="card">
+<img src="notes.jpg">
+<p class="title">Lined Self Notes</p>
+<p class="price">$0.65 
+<button class="btn" data-name="Lined Self Notes" 
+data-price="%0.65"
+data-img="notes.jpg">🛒</button>
+</p>
+
+</div>
+
+<div class="card">
+<img src="miniFan.jpg">
+<p class="title">Mini Fan</p>
+<p class="price">$3.37
+<button class="btn" data-name="Mini Fan"
+ data-price="$3.37"
+ data-img="miniFan.jpg">🛒</button>
+</p>
+
+</div>
+
+<div class="card">
+<img src="charger.jpg">
+<p class="title">Solar Charger</p>
+<p class="price">$2.40 
+<button class="btn" data-name="Solar Charger"
+ data-price="$2.40"
+ data-img="charger.jpg">🛒</button>
+</p>
+
+</div>
+
+</section>
+<script>
+    
+    const search = document.getElementById("searchInput");
+const cards = document.querySelectorAll(".card");
+
+search.addEventListener("input", function(){
+
+let val = search.value.toLowerCase();
+
+cards.forEach(c=>{
+
+let title = c.querySelector(".title").textContent.toLowerCase();
+
+if(title.includes(val)){
+c.style.display="block";
+}else{
+c.style.display="none";
+}
+
+});
+
+});
+
+
+
+const buttons = document.querySelectorAll(".btn");
+
+buttons.forEach(btn => {
+
+btn.addEventListener("click", function(){
+
+let name = this.dataset.name;
+let price = this.dataset.price;
+let img = this.dataset.img;
+
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+cart.push({
+name:name,
+price:price,
+img:img
+});
+
+localStorage.setItem("cart", JSON.stringify(cart));
+
+alert("Product added to cart");
+
+});
+
+});
+</script>
+
+</body>
+</html>
